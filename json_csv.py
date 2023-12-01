@@ -8,7 +8,7 @@ csv_output_path = 'yelp_csv_dataset.csv'
 # Open the JSON file and read lines
 with open(json_file_path, 'r', encoding='utf-8') as json_file:
     # Read the first 10,000 lines from the JSON file
-    json_lines = [json_file.readline() for _ in range(10000)]
+    json_lines = [json_file.readline() for _ in range(100000)]
 
 # Parse each JSON line and store the data in a list
 data = [json.loads(line) for line in json_lines]
