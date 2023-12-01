@@ -4,7 +4,7 @@ import pandas as pd
 file_path = "yelp_academic_dataset_review.json"
 
 # Read only the first 500000 rows as a sample since less memory
-df = pd.read_json(file_path, lines=True, nrows=500000)
+df = pd.read_json(file_path, lines=True, nrows=5000)
 
 # Display column names
 print("Column Names:")
@@ -30,5 +30,5 @@ df = df.dropna()
 df['sentiment'] = df['stars'].apply(lambda x: 'negative' if x in [1, 2] else ('neutral' if x in [3, 4] else 'positive'))
 
 # Save the feature engineered dataset
-df.to_json("feature_engineered_dataset.json", orient="records", lines=True)
+#df.to_json("reduced_feature_engineered_dataset.json", orient="records", lines=True)
 
